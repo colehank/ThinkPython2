@@ -1,4 +1,7 @@
-'1#############################################################################'
+#%% 1
+"""
+RUN SELECTION Plz
+"""
 def nested_sum(t):
     total = 0
     for numbers in t:
@@ -8,50 +11,58 @@ def nested_sum(t):
 t = [[1, 2], [3], [4, 5, 6]]
 nested_sum(t)
 
-'2#############################################################################'
+#%% 2
+
+"""
+RUN SELECTION Plz
+"""
 def cumsum(t):
     empty = []
     total = 0
     for i in t:#不可照搬题1，因为1返回总的一个值，因此此处应该再循环内就记录下来每次的值
         total = i + total
         empty.append(total)
-    return empty        
+    return empty  
 
+      
 t = [1, 2, 3]
 cumsum(t)
 
-'3#############################################################################'#注意，要返回一个新列表
+#%%3
+"""
+RUN SELECTION Plz
+"""
 def middle(t):
     empty=[]
     t= t[1:-1]
     empty.append(t)#对比答案写的太麻烦了，不必设新列表再传入，直接原来的t修改后就指向新值了
-    return t    
+    return t   
+
+    
 t = [1, 2, 3, 4]
 middle(t)
 
-
-'4#############################################################################'
+#%% 4
 def chop(t):
     del t[0]
     del t[-1]
         #不返回值
-
-'5#############################################################################'
+        
+#%% 5
 def is_sorted(t):
     return t==t.sorted()#bool运算默认返回bool值的
 
-'6#############################################################################'
+#%% 6
+#sorted()是一个函数，可以排序列表
 
-sorted()#是一个函数，可以排序列表
-def is_anagram(Str1,Str2):
-    return Str1.sort == Str2.sort
+def is_anagram(a,b):
+    l_a = a.sort()
+    l_b = b.sort()
+    for i in l_a:
+        for v in l_b:
+            return i == v
 
-t=[1,4,5]
-t1=[5,1,4]
-is_anagram(t, t1)
-    
-    
-'7#############################################################################'
+#%% 7 
 def has_duplicates(t):
     sorted(t)#出错，这样没有将排序的值赋予给任何对象
     for i in t:#出错，这样循环到最后一位就超出范围了
@@ -67,11 +78,16 @@ def has_duplicates(t):
     for i in range(len(t)-1):
         if t[i] == t[i+1]:
             return True
-    return False
+        else:
+            return False
+
+"""
+RUN SELECTION Plz
+"""
 t=[1,3,1,4]
 has_duplicates(t)
 
-'8#############################################################################'
+#%% 8
 #weki：生日悖论：人数过23人便有50%的概率有两人同天生日
 #在23个（1，365）的随机数中间，有两个数相等的概率近似50%
 import random
@@ -108,10 +124,14 @@ def Birthday_paradox():
     print('After %d simulations' % num_simulations)
     print('with %d students' % num_students)
     print('there were %d simulations with at least one match' % count)
+    
 
+"""
+RUN SELECTION Plz
+"""
 Birthday_paradox()
 
-'9#############################################################################'
+#%% 9
 words = open('words.txt')
 
 
@@ -121,7 +141,9 @@ def function_1():
         x = i.strip()#x是words中去掉空格的word
         t.append(x)
     return t
-
+"""
+RUN SELECTION Plz
+"""
 function_1()
 
 
@@ -133,13 +155,16 @@ def function_2():
         x = i.strip()
         t += [x]
     return t
-
+"""
+RUN SELECTION Plz
+"""
 function_2()
 
-#function_2更长，不知道为什么...
 
-
-'10,11#############################################################################'
+#%% 10,11
+"""
+RUN SELECTION Plz
+"""
 words = open('words.txt')
 
 def function_1():#生成word.txt的字符串
@@ -175,7 +200,10 @@ def is_palindrome():#列出是回文词的字符串
 
 is_palindrome()
 
-'12#############################################################################'
+#%% 12
+"""
+RUN SELECTION Plz
+"""
 words = open('words.txt')
 
 def thelock(word_list,word):
@@ -193,13 +221,11 @@ def lock_n(word_list, word, n):#检查一个字母是否包含n个互锁字
 
 word_list = function_1()
 
-#############################################################################
 def locklock():    
     for word in word_list:
         if thelock(word_list, word):
             print(word)        
-locklock()
-#############################################################################
+#locklock()
 def locklocklock():
     for word in word_list:
         if lock_n(word_list, word, 3):
